@@ -62,7 +62,17 @@ namespace StringCalculatorKata
             if(string.IsNullOrWhiteSpace(s))
                 return 0;
 
-            return s.Split(',', '\n').Sum(int.Parse);
+            char[] delimiters = {',', '\n'};
+
+            if (s.StartsWith("//"))
+            {
+                string[] commands = s.Split('\n');
+
+                delimiters = new [] { commands[0][2] };
+                s = commands[1];
+            }
+
+            return s.Split(delimiters).Sum(int.Parse);
         }
     }
 }
