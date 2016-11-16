@@ -1,6 +1,14 @@
-﻿namespace StringCalculatorKata
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace StringCalculatorKata
 {
-    class StringCalculatorShould
+    [TestClass]
+    public class StringCalculatorShould
     {
+        [TestMethod]
+        public void VerifyAddMethod()
+        {
+            int result = StringCalculator.Add("1");
+        }
     }
 }
