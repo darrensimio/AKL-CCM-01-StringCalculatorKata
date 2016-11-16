@@ -54,7 +54,7 @@ namespace StringCalculatorKata
             if(string.IsNullOrWhiteSpace(s))
                 return 0;
 
-            return s.Split(',').Sum(int.Parse);
+            return s.Split(',', '\n').Sum(int.Parse);
         }
     }
 }
