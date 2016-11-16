@@ -70,6 +70,9 @@ namespace StringCalculatorKata
             if(string.IsNullOrWhiteSpace(s))
                 return 0;
 
+            if(s.Contains('-'))
+                throw new Exception();
+
             char[] delimiters = {',', '\n'};
 
             if (s.StartsWith("//"))
