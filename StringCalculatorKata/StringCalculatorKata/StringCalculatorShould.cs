@@ -1,4 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using System.Linq;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StringCalculatorKata
 {
@@ -37,7 +39,7 @@ namespace StringCalculatorKata
             if(string.IsNullOrWhiteSpace(s))
                 return 0;
 
-            return 1;
+            return s.Split(',').Sum(operand => Int32.Parse(operand));
         }
     }
 }
