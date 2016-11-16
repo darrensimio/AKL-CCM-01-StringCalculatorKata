@@ -18,7 +18,7 @@ namespace StringCalculatorKata
     {
         public static int Add(string s)
         {
-            throw new System.NotImplementedException();
+            return 1;
         }
     }
 }
