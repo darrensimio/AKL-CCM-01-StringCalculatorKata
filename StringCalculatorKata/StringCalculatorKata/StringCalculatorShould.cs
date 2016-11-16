@@ -37,6 +37,14 @@ namespace StringCalculatorKata
 
             Assert.AreEqual(result, 10);
         }
+
+        [TestMethod]
+        public void ReturnSixWhenValuesOneAndTwoAndThreeAreAddedWithBothNewLineAndCommarAsSeperators()
+        {
+            int result = StringCalculator.Add("1\n2,3");
+
+            Assert.AreEqual(result, 6);
+        }
     }
 
     public class StringCalculator
