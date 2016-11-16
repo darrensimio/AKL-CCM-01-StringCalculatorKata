@@ -26,6 +26,9 @@ namespace StringCalculatorKata
     {
         public static int Add(string s)
         {
+            if(string.IsNullOrWhiteSpace(s))
+                return 0;
+
             return 1;
         }
     }
