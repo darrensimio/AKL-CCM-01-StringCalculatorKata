@@ -45,6 +45,14 @@ namespace StringCalculatorKata
 
             Assert.AreEqual(result, 6);
         }
+
+        [TestMethod]
+        public void ReturnThreeWhenCustomDelimitersAreUsedBetweenValuesOneAndTwo()
+        {
+            int result = StringCalculator.Add("//;\n1;2");
+
+            Assert.AreEqual(result, 3);
+        }
     }
 
     public class StringCalculator
