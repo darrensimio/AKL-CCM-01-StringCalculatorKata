@@ -6,9 +6,11 @@ namespace StringCalculatorKata
     public class StringCalculatorShould
     {
         [TestMethod]
-        public void VerifyAddMethod()
+        public void ReturnOriginalValueWhenSingleNumberIsAdded()
         {
             int result = StringCalculator.Add("1");
+
+            Assert.AreEqual(result, 1);
         }
     }
 
