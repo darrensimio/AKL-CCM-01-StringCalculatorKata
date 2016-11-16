@@ -11,4 +11,12 @@ namespace StringCalculatorKata
             int result = StringCalculator.Add("1");
         }
     }
+
+    public class StringCalculator
+    {
+        public static int Add(string s)
+        {
+            throw new System.NotImplementedException();
+        }
+    }
 }
