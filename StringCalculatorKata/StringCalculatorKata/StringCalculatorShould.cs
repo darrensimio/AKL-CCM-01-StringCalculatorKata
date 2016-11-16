@@ -20,6 +20,14 @@ namespace StringCalculatorKata
 
             Assert.AreEqual(result, 0);
         }
+
+        [TestMethod]
+        public void ReturnThreeWhenValuesOneAndTwoAreAdded()
+        {
+            int result = StringCalculator.Add("1,2");
+
+            Assert.AreEqual(result, 3);
+        }
     }
 
     public class StringCalculator
