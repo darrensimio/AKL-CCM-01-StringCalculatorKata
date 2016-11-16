@@ -12,6 +12,14 @@ namespace StringCalculatorKata
 
             Assert.AreEqual(result, 1);
         }
+
+        [TestMethod]
+        public void ReturnZeroWhenEmptyStringIsAdded()
+        {
+            int result = StringCalculator.Add("");
+
+            Assert.AreEqual(result, 0);
+        }
     }
 
     public class StringCalculator
