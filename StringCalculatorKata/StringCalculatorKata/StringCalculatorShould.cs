@@ -1,0 +1,6 @@
+﻿namespace StringCalculatorKata
+{
+    class StringCalculatorShould
+    {
+    }
+}
