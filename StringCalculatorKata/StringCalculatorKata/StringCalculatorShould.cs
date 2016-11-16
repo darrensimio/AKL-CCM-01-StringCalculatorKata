@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace StringCalculatorKata
@@ -52,6 +53,13 @@ namespace StringCalculatorKata
             int result = StringCalculator.Add("//;\n1;2");
 
             Assert.AreEqual(result, 3);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void ThrowExceptionWhenNegativeValueExistInOperands()
+        {
+            StringCalculator.Add("-1,2");
         }
     }
 
