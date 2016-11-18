@@ -56,7 +56,7 @@ namespace StringCalculatorKata
         }
 
         [TestMethod]
-        public void ThrowExceptionWithOffendingOperandsInMessageWhenNegativeValueExistInOperands()
+        public void ThrowExceptionWithOffendingOperandInMessageWhenNegativeValueExistInOperands()
         {
             try
             {
@@ -65,6 +65,19 @@ namespace StringCalculatorKata
             catch (Exception ex)
             {
                 Assert.AreEqual(ex.Message, "negatives not allowed (-1)");
+            }
+        }
+
+        [TestMethod]
+        public void ThrowExceptionWithOffendingOperandsInMessageWhenNegativeValueExistInOperands()
+        {
+            try
+            {
+                StringCalculator.Add("-1,2,-3,4");
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual(ex.Message, "negatives not allowed (-1,-3)");
             }
         }
     }
