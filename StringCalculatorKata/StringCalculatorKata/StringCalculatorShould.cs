@@ -56,7 +56,6 @@ namespace StringCalculatorKata
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception))]
         public void ThrowExceptionWithOffendingOperandsInMessageWhenNegativeValueExistInOperands()
         {
             try
