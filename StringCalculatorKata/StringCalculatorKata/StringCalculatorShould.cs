@@ -89,9 +89,6 @@ namespace StringCalculatorKata
             if(string.IsNullOrWhiteSpace(s))
                 return 0;
 
-            if(s.Contains('-'))
-                throw new Exception("negatives not allowed (-1)");
-
             char[] delimiters = {',', '\n'};
 
             if (s.StartsWith("//"))
@@ -100,6 +97,14 @@ namespace StringCalculatorKata
 
                 delimiters = new [] { commands[0][2] };
                 s = commands[1];
+            }
+
+            if (s.Contains('-'))
+            {
+                string[] offendingOperands = s.Split(delimiters).Where(operands => operands.Contains("-")).ToArray();
+                string exceptionMessage = "negatives not allowed ({0})";
+
+                throw new Exception(string.Format(exceptionMessage, string.Join(",", offendingOperands)));
             }
 
             return s.Split(delimiters).Sum(int.Parse);
