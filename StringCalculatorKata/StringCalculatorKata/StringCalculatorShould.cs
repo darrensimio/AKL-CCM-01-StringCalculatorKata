@@ -77,7 +77,7 @@ namespace StringCalculatorKata
                 return 0;
 
             if(s.Contains('-'))
-                throw new Exception();
+                throw new Exception("negatives not allowed (-1)");
 
             char[] delimiters = {',', '\n'};
 
