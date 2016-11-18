@@ -99,6 +99,13 @@ namespace StringCalculatorKata
                 s = commands[1];
             }
 
+            HandleNegativeOperands(s, delimiters);
+
+            return s.Split(delimiters).Sum(int.Parse);
+        }
+
+        private static void HandleNegativeOperands(string s, char[] delimiters)
+        {
             if (s.Contains('-'))
             {
                 string[] offendingOperands = s.Split(delimiters).Where(operands => operands.Contains("-")).ToArray();
@@ -106,8 +113,6 @@ namespace StringCalculatorKata
 
                 throw new Exception(string.Format(exceptionMessage, string.Join(",", offendingOperands)));
             }
-
-            return s.Split(delimiters).Sum(int.Parse);
         }
     }
 }
